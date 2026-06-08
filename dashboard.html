@@ -1,394 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GreenVolt Dashboard</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenVolt Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="dashboard-page">
 
 
-    
-<div class="dashboard">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
+    <div class="dashboard">
 
-        <div>
+        <!-- SIDEBAR -->
+        <aside class="sidebar animate-slide-in-left">
 
-            <div class="sidebar-logo">
-                <img src="images/green_logo.webp" alt="GreenVolt">
-              
-            </div>
+            <div>
 
-            <ul class="sidebar-menu">
+                <div class="sidebar-logo">
+                    <img src="images/green_logo.webp" alt="GreenVolt">
 
-                <li>
-                    <a href="#dashboard" class="active">
-                        📊 Dashboard
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#energy">
-                        ⚡ Energy
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#projects">
-                        🌎 Projects
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#analytics">
-                        📈 Analytics
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#reports">
-                        📄 Reports
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#settings">
-                        ⚙ Settings
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-        <a href="index.html" class="logout-btn">
-            Logout
-        </a>
-
-    </aside>
-
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
-
-        <!-- DASHBOARD -->
-        <section id="dashboard">
-
-            <div class="dashboard-header">
-
-                <div>
-                    <h1>Dashboard Overview</h1>
-                    <p>Welcome back to GreenVolt Energy Platform</p>
                 </div>
 
-                <div class="user-profile">
-                    <img src="https://i.pravatar.cc/100?img=12" alt="User">
+                <ul class="sidebar-menu">
+
+                    <li>
+                        <a href="#dashboard" class="active">
+                            📊 Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#energy">
+                            ⚡ Energy
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">
+                            🌎 Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#analytics">
+                            📈 Analytics
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#reports">
+                            📄 Reports
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#settings">
+                            ⚙ Settings
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <a href="login.html" class="logout-btn" onclick="logout()">
+                Logout
+            </a>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- DASHBOARD -->
+            <section id="dashboard">
+
+                <div class="dashboard-header animate-fade-in-up delay-100">
+
                     <div>
-                        <h4>Admin User</h4>
-                        <span>Administrator</span>
+                        <h1>Dashboard Overview</h1>
+                        <p>Welcome back to GreenVolt Energy Platform</p>
+                    </div>
+
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=12" alt="User">
+                        <div>
+                            <h4 id="loginUser">User</h4>
+                            <span>Administrator</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-cards">
+
+                    <div class="dashboard-card hover-lift animate-fade-in-up delay-200">
+                        <h3>Total Projects</h3>
+                        <h2>520</h2>
+                    </div>
+
+                    <div class="dashboard-card hover-lift animate-fade-in-up delay-300">
+                        <h3>Active Clients</h3>
+                        <h2>25K+</h2>
+                    </div>
+
+                    <div class="dashboard-card hover-lift animate-fade-in-up delay-400">
+                        <h3>Energy Produced</h3>
+                        <h2>450 GWh</h2>
+                    </div>
+
+                    <div class="dashboard-card hover-lift animate-fade-in-up delay-500">
+                        <h3>Revenue</h3>
+                        <h2>$2.8M</h2>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ENERGY -->
+            <section id="energy" class="activity-table animate-fade-in-up delay-300">
+
+                <h2>⚡ Energy Management</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>Production</th>
+                            <th>Efficiency</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Solar Energy</td>
+                            <td>250 GWh</td>
+                            <td>95%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Wind Energy</td>
+                            <td>150 GWh</td>
+                            <td>88%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Hydro Energy</td>
+                            <td>50 GWh</td>
+                            <td>92%</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <br>
+
+            <!-- PROJECTS -->
+            <section id="projects" class="activity-table animate-fade-in-up delay-400">
+
+                <h2>🌎 Active Projects</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Status</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Solar Farm X1</td>
+                            <td>
+                                <span class="status success">
+                                    Completed
+                                </span>
+                            </td>
+                            <td>California</td>
+                        </tr>
+
+                        <tr>
+                            <td>Wind Energy Grid</td>
+                            <td>
+                                <span class="status running">
+                                    Running
+                                </span>
+                            </td>
+                            <td>Texas</td>
+                        </tr>
+
+                        <tr>
+                            <td>Green City Project</td>
+                            <td>
+                                <span class="status pending">
+                                    Pending
+                                </span>
+                            </td>
+                            <td>Singapore</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <br>
+
+            <!-- ANALYTICS -->
+            <section id="analytics" class="animate-fade-in-up delay-500">
+
+                <div class="analytics-grid">
+
+                    <div class="chart-card">
+
+                        <h3>Solar Energy Production</h3>
+
+                        <div class="bar">
+                            <span style="width:90%"></span>
+                        </div>
+
+                        <div class="bar">
+                            <span style="width:75%"></span>
+                        </div>
+
+                        <div class="bar">
+                            <span style="width:95%"></span>
+                        </div>
+
+                        <div class="bar">
+                            <span style="width:80%"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="chart-card">
+
+                        <h3>Project Completion</h3>
+
+                        <div class="progress-circle">
+                            <span>84%</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <br>
+
+            <!-- REPORTS -->
+            <section id="reports" class="activity-table animate-fade-in-up delay-600">
+
+                <h2>📄 Reports</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Report</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Monthly Energy Report</td>
+                            <td>June 2026</td>
+                        </tr>
+
+                        <tr>
+                            <td>Carbon Emission Report</td>
+                            <td>June 2026</td>
+                        </tr>
+
+                        <tr>
+                            <td>Revenue Analysis Report</td>
+                            <td>June 2026</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <br>
+
+            <!-- SETTINGS -->
+            <section id="settings" class="activity-table animate-fade-in-up delay-700">
+
+                <h2>⚙ Settings</h2>
+
+                <table>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Profile Settings</td>
+                        </tr>
+
+                        <tr>
+                            <td>Notification Settings</td>
+                        </tr>
+
+                        <tr>
+                            <td>Security Settings</td>
+                        </tr>
+
+                        <tr>
+                            <td>Theme Preferences</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <br>
+
+            <!-- ENVIRONMENTAL IMPACT -->
+            <section id="impact" class="activity-table animate-fade-in-up delay-700">
+                <h2>🌱 Environmental Impact</h2>
+                <div class="analytics-grid impact-grid">
+                    <div class="chart-card" style="text-align: center;">
+                        <h3 style="color: #22c55e; font-size: 32px; margin-bottom: 5px;">1.2M</h3>
+                        <p style="color: #94a3b8; font-size: 14px;">Tons CO₂ Saved</p>
+                    </div>
+                    <div class="chart-card" style="text-align: center;">
+                        <h3 style="color: #06b6d4; font-size: 32px; margin-bottom: 5px;">50K</h3>
+                        <p style="color: #94a3b8; font-size: 14px;">Trees Planted Eq.</p>
+                    </div>
+                    <div class="chart-card" style="text-align: center;">
+                        <h3 style="color: #f59e0b; font-size: 32px; margin-bottom: 5px;">850K</h3>
+                        <p style="color: #94a3b8; font-size: 14px;">Homes Powered</p>
                     </div>
                 </div>
+            </section>
+
+            <br>
+
+            <!-- SYSTEM ALERTS -->
+            <section id="alerts" class="activity-table animate-fade-in-up delay-800">
+                <h2>🔔 System Alerts & Notifications</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><span style="color: #ef4444; margin-right: 10px;">●</span> Grid Disconnect Warning in
+                                Texas Sector</td>
+                            <td style="text-align: right; color: #94a3b8;">10 mins ago</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: #f59e0b; margin-right: 10px;">●</span> Routine Maintenance Scheduled
+                                for Solar Farm X1</td>
+                            <td style="text-align: right; color: #94a3b8;">2 hours ago</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: #22c55e; margin-right: 10px;">●</span> Battery Storage Unit 5 Fully
+                                Charged</td>
+                            <td style="text-align: right; color: #94a3b8;">5 hours ago</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <br>
+
+            <!-- RECENT ACTIVITY -->
+            <div class="activity-table animate-fade-in-up delay-800">
+
+                <h2>Recent Activity</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Solar Farm X1</td>
+                            <td>
+                                <span class="status success">
+                                    Completed
+                                </span>
+                            </td>
+                            <td>05 Jun 2026</td>
+                        </tr>
+
+                        <tr>
+                            <td>Wind Energy Grid</td>
+                            <td>
+                                <span class="status running">
+                                    Running
+                                </span>
+                            </td>
+                            <td>03 Jun 2026</td>
+                        </tr>
+
+                        <tr>
+                            <td>Green City Project</td>
+                            <td>
+                                <span class="status pending">
+                                    Pending
+                                </span>
+                            </td>
+                            <td>01 Jun 2026</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
 
             </div>
 
-            <div class="dashboard-cards">
+        </main>
 
-                <div class="dashboard-card">
-                    <h3>Total Projects</h3>
-                    <h2>520</h2>
-                </div>
+    </div>
 
-                <div class="dashboard-card">
-                    <h3>Active Clients</h3>
-                    <h2>25K+</h2>
-                </div>
+    <script>
 
-                <div class="dashboard-card">
-                    <h3>Energy Produced</h3>
-                    <h2>450 GWh</h2>
-                </div>
+        document.addEventListener("DOMContentLoaded", function () {
 
-                <div class="dashboard-card">
-                    <h3>Revenue</h3>
-                    <h2>$2.8M</h2>
-                </div>
+            const user = localStorage.getItem("loggedInUser");
 
-            </div>
+            if (user) {
+                document.getElementById("loginUser").textContent = user;
+            }
 
-        </section>
+        });
 
-        <!-- ENERGY -->
-        <section id="energy" class="activity-table">
+        function logout() {
 
-            <h2>⚡ Energy Management</h2>
+            localStorage.removeItem("loggedInUser");
 
-            <table>
+        }
 
-                <thead>
-                    <tr>
-                        <th>Source</th>
-                        <th>Production</th>
-                        <th>Efficiency</th>
-                    </tr>
-                </thead>
+    </script>
 
-                <tbody>
 
-                    <tr>
-                        <td>Solar Energy</td>
-                        <td>250 GWh</td>
-                        <td>95%</td>
-                    </tr>
-
-                    <tr>
-                        <td>Wind Energy</td>
-                        <td>150 GWh</td>
-                        <td>88%</td>
-                    </tr>
-
-                    <tr>
-                        <td>Hydro Energy</td>
-                        <td>50 GWh</td>
-                        <td>92%</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </section>
-
-        <br>
-
-        <!-- PROJECTS -->
-        <section id="projects" class="activity-table">
-
-            <h2>🌎 Active Projects</h2>
-
-            <table>
-
-                <thead>
-                    <tr>
-                        <th>Project</th>
-                        <th>Status</th>
-                        <th>Location</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>Solar Farm X1</td>
-                        <td>
-                            <span class="status success">
-                                Completed
-                            </span>
-                        </td>
-                        <td>California</td>
-                    </tr>
-
-                    <tr>
-                        <td>Wind Energy Grid</td>
-                        <td>
-                            <span class="status running">
-                                Running
-                            </span>
-                        </td>
-                        <td>Texas</td>
-                    </tr>
-
-                    <tr>
-                        <td>Green City Project</td>
-                        <td>
-                            <span class="status pending">
-                                Pending
-                            </span>
-                        </td>
-                        <td>Singapore</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </section>
-
-        <br>
-
-        <!-- ANALYTICS -->
-        <section id="analytics">
-
-            <div class="analytics-grid">
-
-                <div class="chart-card">
-
-                    <h3>Solar Energy Production</h3>
-
-                    <div class="bar">
-                        <span style="width:90%"></span>
-                    </div>
-
-                    <div class="bar">
-                        <span style="width:75%"></span>
-                    </div>
-
-                    <div class="bar">
-                        <span style="width:95%"></span>
-                    </div>
-
-                    <div class="bar">
-                        <span style="width:80%"></span>
-                    </div>
-
-                </div>
-
-                <div class="chart-card">
-
-                    <h3>Project Completion</h3>
-
-                    <div class="progress-circle">
-                        <span>84%</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <br>
-
-        <!-- REPORTS -->
-        <section id="reports" class="activity-table">
-
-            <h2>📄 Reports</h2>
-
-            <table>
-
-                <thead>
-                    <tr>
-                        <th>Report</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>Monthly Energy Report</td>
-                        <td>June 2026</td>
-                    </tr>
-
-                    <tr>
-                        <td>Carbon Emission Report</td>
-                        <td>June 2026</td>
-                    </tr>
-
-                    <tr>
-                        <td>Revenue Analysis Report</td>
-                        <td>June 2026</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </section>
-
-        <br>
-
-        <!-- SETTINGS -->
-        <section id="settings" class="activity-table">
-
-            <h2>⚙ Settings</h2>
-
-            <table>
-
-                <tbody>
-
-                    <tr>
-                        <td>Profile Settings</td>
-                    </tr>
-
-                    <tr>
-                        <td>Notification Settings</td>
-                    </tr>
-
-                    <tr>
-                        <td>Security Settings</td>
-                    </tr>
-
-                    <tr>
-                        <td>Theme Preferences</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </section>
-
-        <br>
-
-        <!-- RECENT ACTIVITY -->
-        <div class="activity-table">
-
-            <h2>Recent Activity</h2>
-
-            <table>
-
-                <thead>
-                    <tr>
-                        <th>Project</th>
-                        <th>Status</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>Solar Farm X1</td>
-                        <td>
-                            <span class="status success">
-                                Completed
-                            </span>
-                        </td>
-                        <td>05 Jun 2026</td>
-                    </tr>
-
-                    <tr>
-                        <td>Wind Energy Grid</td>
-                        <td>
-                            <span class="status running">
-                                Running
-                            </span>
-                        </td>
-                        <td>03 Jun 2026</td>
-                    </tr>
-
-                    <tr>
-                        <td>Green City Project</td>
-                        <td>
-                            <span class="status pending">
-                                Pending
-                            </span>
-                        </td>
-                        <td>01 Jun 2026</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </main>
-
-</div>
 
 </body>
+
 </html>

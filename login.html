@@ -1,102 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GreenVolt Login</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenVolt Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="login-page">
 
-<body class="login-page">
+    <body class="login-page">
 
-<div class="login-wrapper">
+        <div class="login-wrapper">
 
-    <div class="login-left">
+            <div class="login-left animate-slide-in-left">
 
-        <div class="brand">
-            <img src="images/green_logo.webp" alt="GreenVolt">
-            
-        </div>
+                <div class="brand animate-fade-in-up delay-100">
+                    <img src="images/green_logo.webp" alt="GreenVolt">
 
-        <span class="badge">⚡ Clean Energy. Better Future.</span>
+                </div>
 
-        <h2>
-            Powering a
-            <span>Sustainable</span>
-            Tomorrow
-        </h2>
+                <span class="badge">⚡ Clean Energy. Better Future.</span>
 
-        <p>
-            Access your GreenVolt dashboard and monitor renewable
-            energy solutions in real-time.
-        </p>
+                <h2 class="animate-fade-in-up delay-200">
+                    Powering a
+                    <span>Sustainable</span>
+                    Tomorrow
+                </h2>
 
-        <div class="stats">
+                <p class="animate-fade-in-up delay-300">
+                    Access your GreenVolt dashboard and monitor renewable
+                    energy solutions in real-time.
+                </p>
 
-            <div>
-                <h3>100%</h3>
-                <span>Clean Energy</span>
+                <div class="stats animate-fade-in-up delay-400">
+
+                    <div>
+                        <h3>100%</h3>
+                        <span>Clean Energy</span>
+                    </div>
+
+                    <div>
+                        <h3>500+</h3>
+                        <span>Projects</span>
+                    </div>
+
+                    <div>
+                        <h3>25K+</h3>
+                        <span>Clients</span>
+                    </div>
+
+                </div>
+
             </div>
 
-            <div>
-                <h3>500+</h3>
-                <span>Projects</span>
-            </div>
+            <div class="login-right">
 
-            <div>
-                <h3>25K+</h3>
-                <span>Clients</span>
+                <div class="login-card hover-lift animate-scale-in delay-200">
+                    <img src="images/green_logo.webp" class="login-logo">
+
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to continue</p>
+
+                    <form id="loginForm">
+
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter your password" required>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox"> Remember me
+                            </label>
+                            <a href="#" class="forgot-pwd">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="btn-login-submit">
+                            Sign In
+                        </button>
+
+                        <div class="social-login">
+                            <p>Or continue with</p>
+                            <div class="social-icons">
+                                <button type="button" class="social-btn">G</button>
+                                <button type="button" class="social-btn">in</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <a href="index.html">
+                        ← Back to Home
+                    </a>
+
+                </div>
+
             </div>
 
         </div>
 
-    </div>
+        <script>
+            document.getElementById("loginForm").addEventListener("submit", function (e) {
 
-    <div class="login-right">
+                e.preventDefault();
 
-        <div class="login-card">
+                const email = document.getElementById("email").value;
 
-            <img src="images/green_logo.webp" class="login-logo">
+                localStorage.setItem("loggedInUser", email);
 
-            <h2>Welcome Back</h2>
-            <p>Sign in to continue</p>
+                window.location.href = "dashboard.html";
 
-            <form id="loginForm">
+            });
+        </script>
 
-                <input type="email"
-                       placeholder="Email Address"
-                       required>
-
-                <input type="password"
-                       placeholder="Password"
-                       required>
-
-                <button type="submit">
-                    Login
-                </button>
-
-            </form>
-
-            <a href="index.html">
-                ← Back to Home
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-<script>
-document.getElementById("loginForm").addEventListener("submit",function(e){
-e.preventDefault();
-window.location.href="dashboard.html";
-});
-</script>
+    </body>
 
 </body>
 
-</body>
 </html>
