@@ -9,107 +9,331 @@
 
 <body class="dashboard-page">
 
-<body class="dashboard-page">
 
+    
 <div class="dashboard">
 
+    <!-- SIDEBAR -->
     <aside class="sidebar">
 
-        <div class="sidebar-logo">
-            <img src="images/green_logo.webp" alt="GreenVolt">
-            <h2>GreenVolt</h2>
+        <div>
+
+            <div class="sidebar-logo">
+                <img src="images/green_logo.webp" alt="GreenVolt">
+              
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="#dashboard" class="active">
+                        📊 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#energy">
+                        ⚡ Energy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects">
+                        🌎 Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#analytics">
+                        📈 Analytics
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#reports">
+                        📄 Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#settings">
+                        ⚙ Settings
+                    </a>
+                </li>
+
+            </ul>
+
         </div>
 
-        <ul class="sidebar-menu">
-            <li><a href="#" class="active">📊 Dashboard</a></li>
-            <li><a href="#">⚡ Energy</a></li>
-            <li><a href="#">🌎 Projects</a></li>
-            <li><a href="#">📈 Analytics</a></li>
-            <li><a href="#">📄 Reports</a></li>
-            <li><a href="#">⚙ Settings</a></li>
-        </ul>
-
-        <a href="index.html" class="logout-btn">Logout</a>
+        <a href="index.html" class="logout-btn">
+            Logout
+        </a>
 
     </aside>
 
+    <!-- MAIN CONTENT -->
     <main class="main-content">
 
-        <div class="dashboard-header">
+        <!-- DASHBOARD -->
+        <section id="dashboard">
 
-            <div>
-                <h1>Dashboard Overview</h1>
-                <p>Welcome back to GreenVolt Energy</p>
-            </div>
+            <div class="dashboard-header">
 
-            <div class="user-profile">
-                <img src="https://i.pravatar.cc/100" alt="User">
                 <div>
-                    <h4>Admin User</h4>
-                    <span>Administrator</span>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="dashboard-cards">
-
-            <div class="dashboard-card">
-                <h3>Total Projects</h3>
-                <h2>520</h2>
-            </div>
-
-            <div class="dashboard-card">
-                <h3>Active Clients</h3>
-                <h2>25K+</h2>
-            </div>
-
-            <div class="dashboard-card">
-                <h3>Energy Produced</h3>
-                <h2>450 GWh</h2>
-            </div>
-
-            <div class="dashboard-card">
-                <h3>Revenue</h3>
-                <h2>$2.8M</h2>
-            </div>
-
-        </div>
-
-        <div class="analytics-grid">
-
-            <div class="chart-card">
-                <h3>Solar Energy Production</h3>
-
-                <div class="bar">
-                    <span style="width:90%"></span>
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back to GreenVolt Energy Platform</p>
                 </div>
 
-                <div class="bar">
-                    <span style="width:75%"></span>
-                </div>
-
-                <div class="bar">
-                    <span style="width:95%"></span>
-                </div>
-
-                <div class="bar">
-                    <span style="width:80%"></span>
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/100?img=12" alt="User">
+                    <div>
+                        <h4>Admin User</h4>
+                        <span>Administrator</span>
+                    </div>
                 </div>
 
             </div>
 
-            <div class="chart-card">
-                <h3>Project Completion</h3>
+            <div class="dashboard-cards">
 
-                <div class="progress-circle">
-                    <span>84%</span>
+                <div class="dashboard-card">
+                    <h3>Total Projects</h3>
+                    <h2>520</h2>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Active Clients</h3>
+                    <h2>25K+</h2>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Energy Produced</h3>
+                    <h2>450 GWh</h2>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Revenue</h3>
+                    <h2>$2.8M</h2>
                 </div>
 
             </div>
 
-        </div>
+        </section>
 
+        <!-- ENERGY -->
+        <section id="energy" class="activity-table">
+
+            <h2>⚡ Energy Management</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Source</th>
+                        <th>Production</th>
+                        <th>Efficiency</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Solar Energy</td>
+                        <td>250 GWh</td>
+                        <td>95%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Wind Energy</td>
+                        <td>150 GWh</td>
+                        <td>88%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Hydro Energy</td>
+                        <td>50 GWh</td>
+                        <td>92%</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <br>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="activity-table">
+
+            <h2>🌎 Active Projects</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Project</th>
+                        <th>Status</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Solar Farm X1</td>
+                        <td>
+                            <span class="status success">
+                                Completed
+                            </span>
+                        </td>
+                        <td>California</td>
+                    </tr>
+
+                    <tr>
+                        <td>Wind Energy Grid</td>
+                        <td>
+                            <span class="status running">
+                                Running
+                            </span>
+                        </td>
+                        <td>Texas</td>
+                    </tr>
+
+                    <tr>
+                        <td>Green City Project</td>
+                        <td>
+                            <span class="status pending">
+                                Pending
+                            </span>
+                        </td>
+                        <td>Singapore</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <br>
+
+        <!-- ANALYTICS -->
+        <section id="analytics">
+
+            <div class="analytics-grid">
+
+                <div class="chart-card">
+
+                    <h3>Solar Energy Production</h3>
+
+                    <div class="bar">
+                        <span style="width:90%"></span>
+                    </div>
+
+                    <div class="bar">
+                        <span style="width:75%"></span>
+                    </div>
+
+                    <div class="bar">
+                        <span style="width:95%"></span>
+                    </div>
+
+                    <div class="bar">
+                        <span style="width:80%"></span>
+                    </div>
+
+                </div>
+
+                <div class="chart-card">
+
+                    <h3>Project Completion</h3>
+
+                    <div class="progress-circle">
+                        <span>84%</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <br>
+
+        <!-- REPORTS -->
+        <section id="reports" class="activity-table">
+
+            <h2>📄 Reports</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Report</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Monthly Energy Report</td>
+                        <td>June 2026</td>
+                    </tr>
+
+                    <tr>
+                        <td>Carbon Emission Report</td>
+                        <td>June 2026</td>
+                    </tr>
+
+                    <tr>
+                        <td>Revenue Analysis Report</td>
+                        <td>June 2026</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <br>
+
+        <!-- SETTINGS -->
+        <section id="settings" class="activity-table">
+
+            <h2>⚙ Settings</h2>
+
+            <table>
+
+                <tbody>
+
+                    <tr>
+                        <td>Profile Settings</td>
+                    </tr>
+
+                    <tr>
+                        <td>Notification Settings</td>
+                    </tr>
+
+                    <tr>
+                        <td>Security Settings</td>
+                    </tr>
+
+                    <tr>
+                        <td>Theme Preferences</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <br>
+
+        <!-- RECENT ACTIVITY -->
         <div class="activity-table">
 
             <h2>Recent Activity</h2>
@@ -128,19 +352,31 @@
 
                     <tr>
                         <td>Solar Farm X1</td>
-                        <td><span class="status success">Completed</span></td>
+                        <td>
+                            <span class="status success">
+                                Completed
+                            </span>
+                        </td>
                         <td>05 Jun 2026</td>
                     </tr>
 
                     <tr>
                         <td>Wind Energy Grid</td>
-                        <td><span class="status running">Running</span></td>
+                        <td>
+                            <span class="status running">
+                                Running
+                            </span>
+                        </td>
                         <td>03 Jun 2026</td>
                     </tr>
 
                     <tr>
                         <td>Green City Project</td>
-                        <td><span class="status pending">Pending</span></td>
+                        <td>
+                            <span class="status pending">
+                                Pending
+                            </span>
+                        </td>
                         <td>01 Jun 2026</td>
                     </tr>
 
@@ -153,8 +389,6 @@
     </main>
 
 </div>
-
-</body>
 
 </body>
 </html>
