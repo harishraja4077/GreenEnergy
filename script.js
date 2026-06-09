@@ -61,15 +61,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 3. Mobile Hamburger Menu Toggle
     // ==========================================
-    const hamburger = document.getElementById('hamburger-menu');
-    const navMenu = document.getElementById('nav-menu');
+   const hamburger = document.getElementById('hamburger-menu');
+const navMenu = document.getElementById('nav-menu');
+const sidebarClose = document.getElementById('sidebar-close');
     
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
-        
+            // Close button
+    if (sidebarClose) {
+        sidebarClose.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    }
         // Close nav menu when clicking a link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {

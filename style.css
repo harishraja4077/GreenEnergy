@@ -755,6 +755,56 @@ textarea {
     transform: translateY(-8.5px) rotate(-45deg);
 }
 
+/* ========== Mobile Navigation ========== */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        background-color: var(--bg-primary);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity var(--transition-smooth), transform var(--transition-smooth), visibility var(--transition-smooth);
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        font-size: 1.35rem;
+        font-weight: 600;
+        padding: 10px 0;
+    }
+
+    .header-actions {
+        gap: 12px;
+    }
+
+    .btn-login {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .header .container {
+        padding: 0 16px;
+    }
+}
+
 /* 4. Hero Section */
 .hero {
     min-height: 100vh;
@@ -2377,7 +2427,7 @@ textarea {
 }
 
 .login-card button:hover {
-    background: #15803d;
+    background: #0c963f;
 }
 
 .login-card a {
@@ -2802,6 +2852,21 @@ section {
    RESPONSIVE DASHBOARD
 ========================================== */
 
+/* Sidebar Toggle - Hidden on desktop */
+.sidebar-toggle {
+    display: none;
+}
+
+/* Sidebar Close - Hidden on desktop */
+.sidebar-close {
+    display: none;
+}
+
+/* Sidebar Overlay - Hidden on desktop */
+.sidebar-overlay {
+    display: none;
+}
+
 /* TABLETS & SMALL DESKTOPS */
 @media (max-width: 992px) {
     .sidebar {
@@ -2846,29 +2911,114 @@ section {
         flex-direction: column;
     }
 
+    /* ---- Mobile Hamburger Toggle Button ---- */
+    .sidebar-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 1100;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 12px;
+        cursor: pointer;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .sidebar-toggle:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .sidebar-toggle span {
+        display: block;
+        width: 22px;
+        height: 2.5px;
+        background-color: #22c55e;
+        border-radius: 4px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* ---- Mobile Sidebar Overlay Backdrop ---- */
+    .sidebar-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        z-index: 1200;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .sidebar-overlay.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* ---- Sidebar as Slide-in Panel ---- */
     .sidebar {
-        width: 100%;
-        min-width: 100%;
-        height: auto;
-        position: relative;
-        padding: 20px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, .08);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        min-width: 280px;
+        height: 100vh;
+        z-index: 1300;
+        transform: translateX(-100%);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: none;
+        padding: 25px;
+        overflow-y: auto;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* ---- Close (X) Button inside Sidebar ---- */
+    .sidebar-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #94a3b8;
+        cursor: pointer;
+        transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        z-index: 10;
+    }
+
+    .sidebar-close:hover {
+        background: rgba(239, 68, 68, 0.15);
+        color: #ef4444;
+        transform: rotate(90deg);
     }
 
     .sidebar-logo {
-        margin-bottom: 15px;
+        margin-bottom: 30px;
+        margin-top: 10px;
     }
 
     .sidebar-logo img {
-        width: 130px;
+        width: 150px;
     }
 
     .sidebar-menu {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
+        flex-direction: column;
+        gap: 6px;
     }
 
     .sidebar-menu li {
@@ -2876,24 +3026,26 @@ section {
     }
 
     .sidebar-menu a {
-        padding: 10px 12px;
-        font-size: 13px;
-        border-radius: 10px;
+        padding: 14px 18px;
+        font-size: 15px;
+        border-radius: 12px;
         white-space: nowrap;
     }
 
     .sidebar-menu a:hover {
-        transform: none;
+        transform: translateX(6px);
+        background: rgba(255, 255, 255, 0.04);
     }
 
     .logout-btn {
         width: 100%;
-        margin-top: 15px;
+        margin-top: 20px;
     }
 
+    /* ---- Main Content takes full width ---- */
     .main-content {
         width: 100%;
-        padding: 20px 15px;
+        padding: 70px 15px 20px 15px;
     }
 
     .dashboard-header {
@@ -2934,13 +3086,14 @@ section {
 
 /* SMALL PHONES */
 @media (max-width: 480px) {
-    .sidebar-menu {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    .sidebar {
+        width: 260px;
+        min-width: 260px;
     }
 
     .sidebar-menu a {
-        justify-content: center;
+        padding: 12px 14px;
+        font-size: 14px;
     }
 
     .dashboard-header h1 {
