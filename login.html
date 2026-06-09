@@ -34,24 +34,7 @@
                     energy solutions in real-time.
                 </p>
 
-                <div class="stats animate-fade-in-up delay-400">
-
-                    <div>
-                        <h3>100%</h3>
-                        <span>Clean Energy</span>
-                    </div>
-
-                    <div>
-                        <h3>500+</h3>
-                        <span>Projects</span>
-                    </div>
-
-                    <div>
-                        <h3>25K+</h3>
-                        <span>Clients</span>
-                    </div>
-
-                </div>
+            
 
             </div>
 
@@ -65,25 +48,33 @@
 
                     <form id="loginForm">
 
-                        <div class="input-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="Enter your email" required>
+                        <div class="input-group" style="margin-bottom: 20px;">
+                            <label for="authLevel" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; text-transform: uppercase; color: #555;">Access Corridor</label>
+                            <select id="authLevel" required>
+                                <option value="" disabled selected>Choose authorization level...</option>
+                                <option value="client">Client</option>
+                                <option value="worker">Worker</option>
+                                <option value="admin">Administrator</option>
+                            </select>
                         </div>
 
-                        <div class="input-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" placeholder="Enter your password" required>
+                        <div class="input-group" style="margin-bottom: 20px;">
+                            <label for="email" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; text-transform: uppercase; color: #555;">Identity Token</label>
+                            <input type="email" id="email" placeholder="yourname@gmail.com" required>
+                        </div>
+
+                        <div class="input-group" style="margin-bottom: 20px;">
+                            <label for="password" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; text-transform: uppercase; color: #555;">Encryption Key</label>
+                            <input type="password" id="password" placeholder="**************" required>
                         </div>
 
                         <div class="form-options">
-                            <label class="remember-me">
-                                <input type="checkbox"> Remember me
-                            </label>
-                            <a href="login.html" class="forgot-pwd">Forgot Password?</a>
+
+                            <a href="login.html" class="forgot-pwd">Forgot Password</a>
                         </div>
 
                         <button type="submit" class="btn-login-submit">
-                            Sign In
+                            Initiate Authorization
                         </button>
 
                         <div class="social-login">
@@ -112,8 +103,11 @@
                 e.preventDefault();
 
                 const email = document.getElementById("email").value;
+                const authLevelSelect = document.getElementById("authLevel");
+                const authLevel = authLevelSelect.options[authLevelSelect.selectedIndex].text;
 
                 localStorage.setItem("loggedInUser", email);
+                localStorage.setItem("authLevel", authLevel);
 
                 window.location.href = "dashboard.html";
 

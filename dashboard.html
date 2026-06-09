@@ -107,7 +107,7 @@
                         <img src="https://i.pravatar.cc/100?img=12" alt="User">
                         <div>
                             <h4 id="loginUser">User</h4>
-                            <span>Administrator</span>
+                            <span id="loginAuthLevel">Administrator</span>
                         </div>
                     </div>
 
@@ -461,9 +461,13 @@
         document.addEventListener("DOMContentLoaded", function () {
 
             const user = localStorage.getItem("loggedInUser");
+            const authLevel = localStorage.getItem("authLevel");
 
             if (user) {
                 document.getElementById("loginUser").textContent = user;
+            }
+            if (authLevel) {
+                document.getElementById("loginAuthLevel").textContent = authLevel;
             }
 
             // Mobile Sidebar Toggle
@@ -499,6 +503,7 @@
         function logout() {
 
             localStorage.removeItem("loggedInUser");
+            localStorage.removeItem("authLevel");
 
         }
 
